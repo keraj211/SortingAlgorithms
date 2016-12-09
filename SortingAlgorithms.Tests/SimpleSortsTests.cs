@@ -28,6 +28,23 @@ namespace SortingAlgorithms.Tests
             Assert.AreEqual(new List<int>(), sorted);
         }
 
+        [Test]
+        public void InsertionSort_SortIntNumbers_SortedIntNumbers()
+        {
+            Tuple<List<int>, List<int>> tmp = GeneratePairToSortInt();
+            IEnumerable<int> sorted = SimpleSorts.SelectionSort(tmp.Item2);
+
+            Assert.AreEqual(tmp.Item1, sorted);
+        }
+
+        [Test]
+        public void InsertionSort_SortEmptyList_ReturnEmptyList()
+        {
+            IEnumerable<int> sorted = SimpleSorts.SelectionSort(new List<int>());
+
+            Assert.AreEqual(new List<int>(), sorted);
+        }
+
         private Tuple<List<int>, List<int>> GeneratePairToSortInt()
         {
             List<int> sorted = new List<int>() { 1, 2, 3 };
