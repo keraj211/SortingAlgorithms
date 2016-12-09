@@ -9,24 +9,24 @@ namespace SortingAlgorithms
         public static IEnumerable<T> SelectionSort<T>(IEnumerable<T> numbersToSort) where T : IComparable
         {
             IList<T> numbers = numbersToSort.ToList();
-            int minKey, size = numbersToSort.Count();
-            T tmp;
+            int minIndex, size = numbersToSort.Count();
+            T value;
 
             for (int i = 0; i < size - 1; i++)
             {
-                minKey = i;
+                minIndex = i;
 
                 for (int j = i + 1; j < size; j++)
                 {
-                    if (numbers[minKey].CompareTo(numbers[j]) < 0)
+                    if (numbers[j].CompareTo(numbers[minIndex]) < 0)
                     {
-                        minKey = j;
+                        minIndex = j;
                     }
                 }
 
-                tmp = numbers[minKey];
-                numbers[minKey] = numbers[i];
-                numbers[i] = tmp;
+                value = numbers[minIndex];
+                numbers[minIndex] = numbers[i];
+                numbers[i] = value;
             }
 
             return numbers;

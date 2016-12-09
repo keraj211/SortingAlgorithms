@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{76CBB213-9EF6-4916-B599-FF814C389CF8}</ProjectGuid>
+    <ProjectGuid>{2B18F575-D377-4DCD-9AD6-1CD7E40C2946}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SortingAlgorithms</RootNamespace>
-    <AssemblyName>SortingAlgorithms</AssemblyName>
+    <RootNamespace>SortingAlgorithms.Tests</RootNamespace>
+    <AssemblyName>SortingAlgorithms.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,12 +45,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleSorts\SimpleSorts.cs" />
+    <Compile Include="SimpleSortsTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BubbleSortsAndVariant\" />
-    <Folder Include="DistributionSorts\" />
-    <Folder Include="EfficientSorts\" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SortingAlgorithms.csproj">
+      <Project>{76CBB213-9EF6-4916-B599-FF814C389CF8}</Project>
+      <Name>SortingAlgorithms</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
