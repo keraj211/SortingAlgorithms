@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SortingAlgorithms.Tests
+namespace SortingAlgorithms
 {
-    public class Common
+    internal class Common
     {
         internal Tuple<List<int>, List<int>> GeneratePairToSortInt()
         {

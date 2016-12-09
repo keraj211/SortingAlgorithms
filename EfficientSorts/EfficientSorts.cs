@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SortingAlgorithms.EfficientSorts
+namespace SortingAlgorithms
 {
     public static class EfficientSorts
     {

@@ -1,11 +1,8 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SortingAlgorithms.Tests
+namespace SortingAlgorithms
 {
     [TestFixture]
     public class EfficientSortsTests
@@ -31,7 +28,7 @@ namespace SortingAlgorithms.Tests
         public void QuickSort_SortIntNumbers_SortedIntNumbers()
         {
             Tuple<List<int>, List<int>> tmp = _common.GeneratePairToSortInt();
-            IEnumerable<int> sorted = SimpleSorts.SelectionSort(tmp.Item2);
+            IEnumerable<int> sorted = EfficientSorts.QuickSort(tmp.Item2, 0, tmp.Item2.Count - 1);
 
             Assert.AreEqual(tmp.Item1, sorted);
         }
@@ -39,7 +36,7 @@ namespace SortingAlgorithms.Tests
         [Test]
         public void QuickSort_SortEmptyList_ReturnEmptyList()
         {
-            IEnumerable<int> sorted = SimpleSorts.SelectionSort(new List<int>());
+            IEnumerable<int> sorted = EfficientSorts.QuickSort(new List<int>(), 0, 0);
 
             Assert.AreEqual(new List<int>(), sorted);
         }
