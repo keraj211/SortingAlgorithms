@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using SortingAlgorithms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 namespace SortingAlgorithms.Tests
 {
     [TestFixture]
-    public class SimpleSortsTests
+    public class EfficientSortsTests
     {
         private Common _common;
 
@@ -29,24 +28,7 @@ namespace SortingAlgorithms.Tests
         }
 
         [Test]
-        public void SelectionSort_SortIntNumbers_SortedIntNumbers()
-        {
-            Tuple<List<int>, List<int>> tmp = _common.GeneratePairToSortInt();
-            IEnumerable<int> sorted =  SimpleSorts.SelectionSort(tmp.Item2);
-
-            Assert.AreEqual(tmp.Item1, sorted);
-        }
-
-        [Test]
-        public void SelectionSort_SortEmptyList_ReturnEmptyList()
-        {
-            IEnumerable<int> sorted = SimpleSorts.SelectionSort(new List<int>());
-
-            Assert.AreEqual(new List<int>(), sorted);
-        }
-
-        [Test]
-        public void InsertionSort_SortIntNumbers_SortedIntNumbers()
+        public void QuickSort_SortIntNumbers_SortedIntNumbers()
         {
             Tuple<List<int>, List<int>> tmp = _common.GeneratePairToSortInt();
             IEnumerable<int> sorted = SimpleSorts.SelectionSort(tmp.Item2);
@@ -55,7 +37,7 @@ namespace SortingAlgorithms.Tests
         }
 
         [Test]
-        public void InsertionSort_SortEmptyList_ReturnEmptyList()
+        public void QuickSort_SortEmptyList_ReturnEmptyList()
         {
             IEnumerable<int> sorted = SimpleSorts.SelectionSort(new List<int>());
 
