@@ -6,6 +6,13 @@ namespace SortingAlgorithms
 {
     public static class SimpleSorts
     {
+        /// <summary>
+        /// Selection sort is an algorithm of sorting an array where it loop from the start of the loop, and check through other elements to find the minimum value. 
+        /// After the end of the first iteration, the minimum value is swapped with the current element. The iteration then continues from the 2nd element and so on.
+        /// </summary>
+        /// <typeparam name="T">IComparable type of value</typeparam>
+        /// <param name="numbersToSort">Collection of numbers to sort</param>
+        /// <returns>Sorted collection</returns>
         public static IEnumerable<T> SelectionSort<T>(IEnumerable<T> numbersToSort) where T : IComparable
         {
             IList<T> numbers = numbersToSort.ToList();
